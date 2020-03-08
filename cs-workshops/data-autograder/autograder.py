@@ -1,7 +1,39 @@
 import csv 
+from time import sleep
+
+def suspense(sleep_len):
+    for _ in range(50):
+        sleep(sleep_len)
+        print("=", end="", flush=True)
+    print()
 
 trainer_teams = {}
 trainer_scores = {}
+
+print("""
+             `;,;.;,;.;.'
+              ..:;:;::;: 
+        ..--''' '' ' ' '''--.  
+      /' .   .'        '.   .`\\
+     | /    /            \   '.|
+     | |   :             :    :|
+   .'| |   :             :    :|
+ ,: /\ \.._\ __..===..__/_../ /`.
+|'' |  :.|  `'          `'  |.'  ::.
+|   |  ''|    :'';          | ,  `''\\
+|.:  \/  | /'-.`'   ':'.-'\ |  \,   |
+| '  /  /  | / |...   | \ |  |  |';'|
+ \ _ |:.|  |_\_|`.'   |_/_|  |.:| _ |
+/,.,.|' \__       . .      __/ '|.,.,\\
+     | ':`.`----._____.---'.'   |
+      \   `:\"""-------'""' |   |
+       ',-,-',             .'-=,=,
+""")
+
+print("Starting autograder...")
+suspense(0.01)
+print("Reading teams...")
+suspense(0.02)
 
 with open('pokemonTeams.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -29,6 +61,9 @@ with open('pokemon.csv') as pokemonStats:
 scores = []
 count = 0
 
+print("Calculating scores...")
+suspense(0.04)
+
 for person in trainer_teams: 
     scores.append([person] + [0] * 6)
     for pokemon in trainer_teams[person]: 
@@ -42,7 +77,11 @@ for i in range(1, 7):
         trainer_scores[scores[s][0]] += s
 
 i = 1
-print("-----------------------------------------")
+
+print("Finalizing rankings...")
+suspense(0.03)
+print()
+
 for k, v in sorted(trainer_scores.items(), key=lambda item: -item[1]):
     print("#%d: %s with a score of %s" % (i, k, v))
     i += 1

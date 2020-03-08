@@ -5,7 +5,7 @@ def suspense(sleep_len):
     for _ in range(50):
         sleep(sleep_len)
         print("=", end="", flush=True)
-    print()
+    print("\n")
 
 trainer_teams = {}
 trainer_scores = {}
@@ -31,9 +31,13 @@ print("""
 """)
 
 print("Starting autograder...")
-suspense(0.01)
-print("Reading teams...")
 suspense(0.02)
+print("Catching em all...")
+suspense(0.04)
+print("Reading teams...")
+suspense(0.04)
+print("Jk, not catching em all...")
+suspense(0.08)
 
 with open('pokemonTeams.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -62,7 +66,8 @@ scores = []
 count = 0
 
 print("Calculating scores...")
-suspense(0.04)
+suspense(0.05)
+
 
 for person in trainer_teams: 
     scores.append([person] + [0] * 6)
@@ -76,12 +81,11 @@ for i in range(1, 7):
     for s in range(len(scores)):
         trainer_scores[scores[s][0]] += s
 
-i = 1
-
 print("Finalizing rankings...")
-suspense(0.03)
+suspense(0.04)
 print()
 
+i = 1
 for k, v in sorted(trainer_scores.items(), key=lambda item: -item[1]):
     print("#%d: %s with a score of %s" % (i, k, v))
     i += 1

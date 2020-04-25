@@ -1,1 +1,5 @@
 Begin fix of buzzfeed quiz lab, original author: Alex Manes
+Fixed by Chris Keesey and William Shue
+- Added dictionary and list walkthroughs
+- Added loops to the curriculum
+- Additional section of exporting the quiz in the form of .py for friends to take

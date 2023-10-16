@@ -49,7 +49,7 @@ Read through all the materials and let us know if anything in the below list is 
 Our microcontroller contains all the fancy tools we will need to make this circuit work.
 It contains a computer and pins that can serve as the interface between the computer and our circuit.
 Don't worry about software or coding the microcontroller, we will be uploading it for you.
-If you want to see the code running on your ESP32, [here](https://pastebin.com/cc3BJZMk) is a link. Here is a breakdown of what pins we will be using:
+If you want to see the code running on your ESP32, [here](counter.ino) is a link. Here is a breakdown of what pins we will be using:
 
 - `3V`: This is a pin which provides power to the potentiometer, specifically 3.3 V, despite the name. Notice that for the LEDs we will get electricity elsewhere.
 - `GND`: This is our ground terminal, indicated by the negative sign. Think of electricity as a bunch of electrons running through the wires. The electrons have to travel somewhere to complete the circuit, which is the purpose of ground. All our components in the circuit connect here.

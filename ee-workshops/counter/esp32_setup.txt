@@ -1,0 +1,9 @@
+Working with Feather ESP32s...
+
+Install the Ardunio IDE and in it, install the ESP32 library from Espressif.
+
+Make sure your device can interface with serial devices through USB
+- You may need the python module pyserial
+
+Select the board "Adafruit ESP32 Feather" and port. 
+You should be good to compile!

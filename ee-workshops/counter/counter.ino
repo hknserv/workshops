@@ -13,12 +13,13 @@ int pin4 = 21;
 // initialize potentiometer output pin
 int pot_in = A7;
 
+// initialize stop pin
+int stop_pin = A2;
+
 // initialize rolling counter
 int i = 0;
 
 void setup() {
-  // put your setup code here, to run once:
-
   /*
    * tell the microcontroller these pins
    * will be outputs rather than inputs
@@ -30,9 +31,10 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
-  // increment counter
+  // If A2 is high, we don't update the number. So connecting this pin to HIGH acts as a switch to hold the number.
+  if (analogRead(stop_pin) > 2500) {
+    return;
+  }
   i++;
 
   // take a measurement from the potentiometer
@@ -73,5 +75,6 @@ void loop() {
   }
 
   // scale analog reading & clip minimum frequency
-  delay(max(pot_read / 10, 50));
+  Serial.println(pot_read);
+  delay((pot_read / 5) + 100);
 }
